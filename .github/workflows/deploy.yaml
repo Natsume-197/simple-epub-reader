@@ -129,14 +129,14 @@ jobs:
       name: Update Kubernetes resources for development
       run: |
        cd kustomize/overlays/development
-       kustomize edit set image sreader-dev-db=ghcr.io/Natsume-197/simple-epub-reader:$GITHUB_REF_NAME
+       kustomize edit set image sreader-dev-db=ghcr.io/natsume-197/simple-epub-reader:$GITHUB_REF_NAME
        cat kustomization.yaml
 
     - if: ${{ needs.check.outputs.branch == 'production' }}
       name: Update Kubernetes resources for production
       run: |
        cd kustomize/overlays/production
-       kustomize edit set image sreader-db=ghcr.io/Natsume-197/simple-epub-reader:$GITHUB_REF_NAME
+       kustomize edit set image sreader-db=ghcr.io/natsume-197/simple-epub-reader:$GITHUB_REF_NAME
        cat kustomization.yaml
 
     - name: Commit files

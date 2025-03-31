@@ -6,5 +6,5 @@ resources:
 namespace: sreader
 images:
 - name: sreader-dev-db
-  newName: ghcr.io/Natsume-197/simple-epub-reader
+  newName: ghcr.io/natsume-197/simple-epub-reader
   newTag: v0.0.5-alpha
