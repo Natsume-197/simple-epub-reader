@@ -46,11 +46,11 @@ spec:
       labels:
         app: sreader
     spec:
+      imagePullSecrets:
+        - name: regcred
       containers:
-        - name: sreader
-          image: sreader:latest
-          ports:
-            - containerPort: 8080
+        - image: sreader-dev-db
+          name: sreader-dev-db
           volumeMounts:
             - name: sreader-volume
               mountPath: /app/data
