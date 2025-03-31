@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	sqldb, err := sql.Open("sqlite3", "./main.db")
+	sqldb, err := sql.Open("sqlite3", "./data/main.db")
 	if err != nil {
 		log.Fatal("Can't open the database: ", err)
 	}
@@ -25,5 +25,5 @@ func main() {
 	r.GET("/user/generate", routes.GenerateUUID) // Generate a new user uuid
 	r.POST("/user/sync", routes.UpdateBooks)     // Get all user books based on an uuid
 
-	r.Run("localhost:3000") // listen and serve on 0.0.0.0:8080
+	r.Run(":8080") // listen and serve on 0.0.0.0:8080
 }
